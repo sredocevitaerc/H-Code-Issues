@@ -1,0 +1,129 @@
+name: Bug report
+description: Report a reproducible problem with the H-Code JetBrains IDE plugin
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem with H-Code.
+        Remove credentials, tokens, private paths, and other sensitive information from logs before submitting them.
+
+  - type: checkboxes
+    id: existing-issue
+    attributes:
+      label: Existing issues
+      description: Check open and closed issues before creating a duplicate report.
+      options:
+        - label: I searched the existing issues and did not find this problem.
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe what happened and how it affected your use of the plugin.
+      placeholder: The H-Code action opened the terminal, but...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest reliable sequence that reproduces the problem.
+      placeholder: |
+        1. Configure the IntelliJ terminal to use...
+        2. Open a project...
+        3. Click H-Code...
+        4. Observe...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Explain what you expected the plugin to do.
+    validations:
+      required: true
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: H-Code version
+      description: Find this under Settings or Preferences, then Plugins, then H-Code.
+      placeholder: 1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: ide-version
+    attributes:
+      label: JetBrains IDE and version
+      description: Include the IDE name, full version, and edition from Help, then About.
+      placeholder: IntelliJ IDEA 2026.1.3 Ultimate
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating system
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: shell
+    attributes:
+      label: Configured terminal shell
+      description: Copy the shell path configured in IntelliJ terminal settings.
+      placeholder: /bin/zsh or C:\Program Files\PowerShell\7\pwsh.exe
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-provider
+    attributes:
+      label: Affected provider
+      description: Choose the provider or handoff step involved in the problem.
+      options:
+        - Codex
+        - Claude Code
+        - Automatic handoff between providers
+        - Not sure
+    validations:
+      required: true
+
+  - type: input
+    id: codex-version
+    attributes:
+      label: Codex version
+      description: If Codex is involved, run `codex --version` in the same IDE terminal.
+      placeholder: codex-cli 1.2.3
+
+  - type: input
+    id: claude-version
+    attributes:
+      label: Claude Code version
+      description: If Claude Code is involved, run `claude --version` in the same IDE terminal.
+      placeholder: 2.1.177 (Claude Code)
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Paste relevant terminal output or IntelliJ logs after removing sensitive information.
+      render: shell
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add screenshots or any other details that may help diagnose the problem.
