@@ -1,4 +1,4 @@
-name: Bug report (JetBrains plugin)
+name: Bug report
 description: Report a reproducible problem with the H-Code JetBrains IDE plugin
 title: "[Bug]: "
 labels:
